@@ -17,12 +17,18 @@ public class Lab11 {
 
 	public static void main(String[] args) throws FileNotFoundException, IOException {
 		try ( // Create an input stream for file pricelist.dat
-				DataInputStream input = new DataInputStream(new FileInputStream("src/pricelist.dat"));
+				DataInputStream input = new DataInputStream(new FileInputStream("src/people.dat"));
 				) {
 
 			// Read student prices from the file
-			while (true)
+			while (true) {
+				System.out.println(input.readInt());
+				System.out.println(input.readUTF());
+				System.out.println(input.readUTF());
+				System.out.println(input.readInt());
 				System.out.println(input.readDouble());
+				System.out.println();
+			}
 		} catch (EOFException ex) {	
 			System.out.println("Reached end of file");
 		}
